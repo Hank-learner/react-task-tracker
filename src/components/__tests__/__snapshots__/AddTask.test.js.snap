@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddTask snapshot test renders correctly 1`] = `
+<form
+  className="add-form"
+  onSubmit={[Function]}
+>
+  <div
+    className="form-control"
+  >
+    <label
+      htmlFor="new-task-title"
+    >
+      Enter Task
+    </label>
+    <input
+      id="new-task-title"
+      onChange={[Function]}
+      placeholder="Add Task"
+      required={true}
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="form-control"
+  >
+    <label>
+      Day & Time
+    </label>
+    <input
+      onChange={[Function]}
+      placeholder="Add Day & Time"
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="form-control form-control-check"
+  >
+    <label>
+      Set Reminder
+    </label>
+    <input
+      checked={false}
+      onChange={[Function]}
+      type="checkbox"
+      value={false}
+    />
+  </div>
+  <input
+    className="btn btn-block"
+    type="submit"
+    value="Save Task"
+  />
+</form>
+`;

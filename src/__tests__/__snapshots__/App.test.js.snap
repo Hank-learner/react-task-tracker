@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main page snapshot should take a snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <header
+      class="header"
+      id="header"
+    >
+      <h1>
+        Task Tracker
+      </h1>
+      <button
+        class="btn"
+        data-testid="add-task"
+        style="background-color: green;"
+      >
+        Add
+      </button>
+    </header>
+    No Tasks to Show
+    <footer>
+      <p>
+        Developed with help of Traversy Media © 2021
+      </p>
+      <a
+        href="/about"
+      >
+        About
+      </a>
+    </footer>
+  </div>
+</DocumentFragment>
+`;

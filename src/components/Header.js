@@ -6,7 +6,7 @@ const Header = ({ title, onAdd, showAddTask }) => {
     const location = useLocation()
 
     return (
-        <header className='header'>
+        <header className='header' id='header'>
             {/* <h1 style={{ color: "red", backgroundColor: "black" }}>{props.title}</h1>
             <h2 style={headingStyle}>hey there</h2> */}
             <h1>{title}</h1>
@@ -15,6 +15,7 @@ const Header = ({ title, onAdd, showAddTask }) => {
                     color={showAddTask ? 'red' : 'green'}
                     text={showAddTask ? 'Close' : 'Add'}
                     onClick={onAdd}
+                    dataTestID='add-task'
                 />
             }
         </header>

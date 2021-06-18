@@ -22,12 +22,14 @@ const AddTask = ({onAdd}) => {
     return (
         <form className='add-form' onSubmit={onSubmit}>
             <div className='form-control'>
-                <label>Task</label>
+                <label htmlFor='new-task-title'>Enter Task</label>
                 <input
+                    id='new-task-title'
                     type='text'
                     placeholder='Add Task'
                     value={text}
                     onChange={(e) => setText(e.target.value)}
+                    required
                 />
             </div>
             <div className='form-control'>
