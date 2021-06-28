@@ -75,6 +75,7 @@ body {
 }
 
 .add-form {
+  margin : 20px;
   margin-bottom: 40px;
 }
 
@@ -112,4 +113,17 @@ body {
 footer {
   margin-top: 30px;
   text-align: center;
+}
+
+a {
+  color: red;
+}
+
+a:visited {
+  color: green;
+}
+
+.header-break {
+  color: white;
+  margin: 10px;
 }

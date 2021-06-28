@@ -2,19 +2,18 @@ import PropTypes from 'prop-types';
 import {useLocation} from 'react-router-dom'
 import Button from './Button'
 
-const Header = ({ title, onAdd, showAddTask }) => {
+const Header = ({ title, onToggleShowAddTask, showAddTask }) => {
     const location = useLocation()
 
     return (
         <header className='header' id='header'>
-            {/* <h1 style={{ color: "red", backgroundColor: "black" }}>{props.title}</h1>
-            <h2 style={headingStyle}>hey there</h2> */}
             <h1>{title}</h1>
             {location.pathname ==='/' &&
                 <Button
+                    enabled = {true}
                     color={showAddTask ? 'red' : 'green'}
                     text={showAddTask ? 'Close' : 'Add'}
-                    onClick={onAdd}
+                    onClick={onToggleShowAddTask}
                     dataTestID='add-task'
                 />
             }
@@ -56,5 +55,6 @@ Header.propTypes = {
 // const clickIt = () => myBtn.current.click()
 // return (<button ref={myBtn}></button>)
 //}
-export default Header;
 
+
+export default Header;

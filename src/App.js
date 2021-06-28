@@ -43,10 +43,6 @@ function App() {
 
     const data = await res.json()
     setTasks([...tasks,data])
-    // console.log(task)
-    // const id = Math.floor(Math.random() * 10000) + 1
-    // const newTask = { id, ...task }
-    // setTasks([...tasks, newTask])
   }
 
   const deleteTask = async (id) => {
@@ -79,22 +75,21 @@ function App() {
     <Router>
       <div className="container">
         <Header
-          onAdd={() => setShowAddTask(!showAddTask)}
+          onToggleShowAddTask={() => setShowAddTask(!showAddTask)}
           showAddTask={showAddTask}
         />
-        
+        <hr className='header-break'></hr>
         <Route path='/' exact render={(props) => (
           <>
-            { showAddTask && <AddTask onAdd={addTask} /> }
-            {
-              tasks.length > 0 ? (
-                <Tasks
-                  tasks={tasks}
-                  onDelete={deleteTask}
-                  onToggle={toggleReminder}
-                />
-              ) : ('No Tasks to Show')
-            }
+            <AddTask
+              onAddTask={addTask}
+              showAddTask={showAddTask}
+            />
+            <Tasks
+              tasks={tasks}
+              onDelete={deleteTask}
+              onToggle={toggleReminder}
+            />
           </>
         )}/>
         <Route path='/about' component={About}/>
@@ -103,9 +98,5 @@ function App() {
     </Router>
   );
 }
-// class App extends React.Component {
-//   render() {
-//     return <h1>hello</h1>
-//   }
-// }
+
 export default App;
