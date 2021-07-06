@@ -3,11 +3,7 @@ pipeline {
   tools {nodejs "node"}
 
   stages {
-    stage('Git') {
-      steps {
-       git url: 'https://github.com/Hank-learner/react-task-tracker.git'
-      }
-    }
+
 
     stage('Build') {
       steps {
