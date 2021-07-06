@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage('Git') {
       steps {
-       sh 'git pull'
+       git url: 'https://github.com/Hank-learner/react-task-tracker.git'
       }
     }
 
