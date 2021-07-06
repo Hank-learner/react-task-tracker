@@ -4,10 +4,10 @@ pipeline {
 
   stages {
     stage('Git') {
-    steps {
-     git clone 'https://github.com/Hank-learner/react-task-tracker.git'
+      steps {
+       sh 'git clone https://github.com/Hank-learner/react-task-tracker.git'
+      }
     }
-  }
 
     stage('Build') {
       steps {
