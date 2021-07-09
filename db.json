@@ -3,7 +3,7 @@
     {
       "text": "Interim demo",
       "day": "Tuesday 11:30 29 June",
-      "reminder": false,
+      "reminder": true,
       "id": 1
     },
     {
