@@ -4,13 +4,15 @@ RUN mkdir /app
 
 WORKDIR /app
 
-COPY package.json /app
+COPY package*.json /app/
 
 RUN npm ci
 
-RUN npm run build
+RUN pwd
 
 COPY . /app
+
+RUN npm run build
 
 EXPOSE 5000
 
