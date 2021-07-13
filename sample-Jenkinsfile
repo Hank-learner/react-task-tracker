@@ -1,0 +1,37 @@
+pipeline {
+    environment{
+        registry = 'jerrypro7/react-task-tracker'
+        registryCredential = 'dockerhub_id'
+    }
+	agent any
+	stages{
+    	stage('Git') {
+    	    steps{
+    		git branch: 'main', url: 'https://github.com/Hank-learner/react-task-tracker.git'
+    	    }
+    	}
+    	stage('Building image') {
+            steps{
+                script{
+                    dockerImage = docker.build registry+":$BUILD_NUMBER"
+                }
+            }
+    	}
+    	stage('pushing image') {
+    	    steps {
+    	        script{
+                    docker.withRegistry( '' , registryCredential ) {
+                		dockerImage.push()
+                    }
+    	        }
+    	    }
+    	}
+        stage('Removing image') {
+            steps{
+                script{sh "docker rmi $registry:$BUILD_NUMBER"}
+                script{sh "docker rmi $registry:latest"}
+            }
+        }
+}
+    
+}
