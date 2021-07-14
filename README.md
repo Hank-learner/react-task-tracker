@@ -75,3 +75,4 @@ npm i -g server
 npm run build
 npm run server
 serve -s build -p 8000
+s
